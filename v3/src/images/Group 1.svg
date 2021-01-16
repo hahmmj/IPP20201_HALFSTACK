@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="156" height="167" viewBox="0 0 156 167">
+  <g>
+    <rect width="156" height="45" x="0" y="61" fill="rgb(249,143,36)" fill-opacity=".8"/>
+    <text font-size="0" style="white-space:pre">
+      <tspan x="18" y="91" fill="rgb(255,255,255)" font-family="Ubuntu" font-size="20" font-weight="400" style="white-space:pre;text-transform:none">Coming Soon</tspan>
+    </text>
+    <g>
+      <path fill="rgb(200,200,200)" fill-rule="evenodd" d="M8 0h140c4.4153202 0 8 3.5846798 8 8v151c0 4.4153202-3.5846798 8-8 8H8c-4.4153202 0-8-3.5846798-8-8V8c0-4.4153202 3.5846798-8 8-8z"/>
+      <rect width="156" height="45" x="0" y="61" fill="rgb(249,143,36)" fill-opacity=".8"/>
+      <text font-size="0" style="white-space:pre">
+        <tspan x="18" y="91" fill="rgb(255,255,255)" font-family="Ubuntu" font-size="20" font-weight="400" style="white-space:pre;text-transform:none">Coming Soon</tspan>
+      </text>
+    </g>
+  </g>
+</svg>
