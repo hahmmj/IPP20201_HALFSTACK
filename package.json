@@ -1,13 +1,13 @@
 {
   "name": "test_thomas_moonjoo",
-  "homepage": "https://https://hahmmj.github.io/IPP20201_HALFSTACK/src/index.html",
+  "homepage": "https://hahmmj.github.io/IPP20201_HALFSTACK/",
   "private": true,
   "version": "1.0.0",
   "description": "TEST_Thomas_Moonjoo",
   "repository": "",
   "license": "UNLICENSED",
   "scripts": {
-    "predeploy": "npm start",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "npm run dev",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.config.js",
@@ -28,7 +28,6 @@
     "dom7": "^2.1.5",
     "framework7": "^5.7.14",
     "framework7-icons": "^3.0.1",
-    "gh-pages": "^3.1.0",
     "template7": "^1.4.2"
   },
   "devDependencies": {
@@ -44,6 +43,7 @@
     "css-loader": "^5.0.1",
     "file-loader": "^6.2.0",
     "framework7-component-loader": "^2.1.2",
+    "gh-pages": "^3.1.0",
     "html-webpack-plugin": "^4.5.0",
     "mini-css-extract-plugin": "^1.3.3",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
