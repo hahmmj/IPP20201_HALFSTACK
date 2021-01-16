@@ -1,13 +1,13 @@
 {
   "name": "test_thomas_moonjoo",
-  "homepage": "https://https://hahmmj.github.io/IPP20201_HALFSTACK/",
+  "homepage": "https://https://hahmmj.github.io/IPP20201_HALFSTACK/src/index.html",
   "private": true,
   "version": "1.0.0",
   "description": "TEST_Thomas_Moonjoo",
   "repository": "",
   "license": "UNLICENSED",
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "npm start",
     "deploy": "gh-pages -d build",
     "start": "npm run dev",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.config.js",
