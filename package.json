@@ -7,7 +7,7 @@
   "repository": "",
   "license": "UNLICENSED",
   "scripts": {
-    "predeploy": "npm start",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "npm run dev",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.config.js",
