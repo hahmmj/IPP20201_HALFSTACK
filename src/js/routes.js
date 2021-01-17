@@ -12,7 +12,7 @@ import Lifelikeui_right from '../pages/lifelikeui_right.f7.html';
 
 var routes = [
   {
-    path: '/home',
+    path: '/',
     component: HomePage,
   },
   {
