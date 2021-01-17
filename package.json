@@ -5,7 +5,7 @@
   "description": "TEST_Thomas_Moonjoo",
   "repository": "",
   "license": "UNLICENSED",
-  "homepage": "https://hahmmj.github.io/IPP20201_HALFSTACK/src",
+  "homepage": "https://hahmmj.github.io/IPP20201_HALFSTACK/home",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
