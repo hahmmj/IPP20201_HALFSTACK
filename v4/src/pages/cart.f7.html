@@ -1,0 +1,156 @@
+<template>
+  <div class="page" data-name="cart">
+    
+    
+<!--Checkout button-->
+    <!-- Scrollable page content-->
+    <div class="page-content_initial">
+          <div class="page-background">
+            <section class="container content-section">
+              <h2 class="section-header">CART</h2>
+              <div class="cart-row">
+                  <span class="cart-item cart-header cart-column">ITEM</span>
+                  <span class="cart-price cart-header cart-column">PRICE</span>
+                  <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+              </div>
+              <div class="cart-items">
+                  <div class="cart-row">
+                      <div class="cart-item cart-column">
+                          <img class="cart-item-image" src="static/img/Album 1.png" width="100" height="100">
+                          <span class="cart-item-title">T-Shirt</span>
+                      </div>
+                      <span class="cart-price cart-column">$19.99</span>
+                      <div class="cart-quantity cart-column">
+                          <input class="cart-quantity-input" type="number" value="1">
+                          <button class="btn btn-danger" type="button">REMOVE</button>
+                      </div>
+                  </div>
+                  <div class="cart-row">
+                      <div class="cart-item cart-column">
+                          <img class="cart-item-image" src="static/img/Album 3.png" width="100" height="100">
+                          <span class="cart-item-title">Album 3</span>
+                      </div>
+                      <span class="cart-price cart-column">$9.99</span>
+                      <div class="cart-quantity cart-column">
+                          <input class="cart-quantity-input" type="number" value="2">
+                          <button class="btn btn-danger" type="button">REMOVE</button>
+                      </div>
+                  </div>
+              </div>
+              <div class="cart-total">
+                  <strong class="cart-total-title">Total</strong>
+                  <span class="cart-total-price">$39.97</span>
+              </div>
+              <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+          </section>
+
+            <div class="article-element">
+              <div class="picture_article-element_sc">
+                  <img src="static/img/Olivenöl bio.PNG" alt="article" class="article_img">
+              </div>
+              <div class="text_article-element_sc">
+                  <p class="name_info">Bio Olivenöl 500 ml</p>
+                  <div class="add_remove">
+                      <a href="/remove" class="button button-small"><i class="material-icons remove">remove</i></a>
+                      <div class="border_around_number"><p class="number_of_articles_sc">1</p></div>
+                      <a href="/add" class="button button-small"><i class="material-icons add">add</i></a>
+                  </div>
+                  <div class="piece_price">
+                      <p class="price_pp">8,99€/p</p>
+                  </div>
+              </div>
+              <div class="total_price_article">
+                  <p class="total">Total:</p>
+                  <p class="price">8,99€</p>
+              </div>
+          </div>
+
+          <div class="article-element">
+            <div class="picture_article-element_sc">
+                <img src="static/img/elmex.PNG" alt="article" class="article_img">
+            </div>
+            <div class="text_article-element_sc">
+                <p class="name_info">Elmex Sensitive 75ml</p>
+                <div class="add_remove">
+                    <a href="/remove" class="button button-small"><i class="material-icons remove">remove</i></a>
+                    <div class="border_around_number"><p class="number_of_articles_sc">1</p></div>
+                    <a href="/add" class="button button-small"><i class="material-icons add">add</i></a>
+                </div>
+                <div class="piece_price">
+                    <p class="price_pp">4,59€/p</p>
+                </div>
+            </div>
+            <div class="total_price_article">
+                <p class="total">Total:</p>
+                <p class="price">4,59€</p>
+            </div>
+        </div>
+          </div>
+          <div class="view view-main view-init safe-areas" data-url="/store"></div>>
+      <div class="view view-main view-init safe-areas" data-url="/store"></div>
+    </div>
+    
+    
+
+    <!-- Footer -->
+    <div class="toolbar toolbar-bottom">
+      <div class="toolbar-inner">
+        <a href="#" class="button button-small panel-toggle display-flex" data-panel="left">
+          <i class="material-icons button-inactive">menu</i>
+        </a>
+        <a href="/"class="button button-small">
+          <i class="material-icons button-inactive">store</i>
+        </a>  
+        <a href="/cart" class="button button-small">
+          <i class="material-icons">shopping_cart</i>
+        </a>
+        <a href="/search" class="button button-small">
+          <i class="material-icons button-inactive">search</i>
+        </a>
+      </div>
+    </div>
+
+    <!--Menu-->
+    <div class="panel panel-left panel-cover">
+      <div class="block">
+        <h2>Online Grocery Store</h2>
+      <li>
+        <div class="listobject">
+          <p>
+            <i class="material-icons">perm_identity</i> User Settings
+          </p>
+        </div>
+        <div class="listobject">
+          <p>
+            <i class="material-icons">payment</i> Payment Settings
+          </p>
+        </div>
+        <div class="listobject">
+          <p>
+            <i class="material-icons">restore</i> Recently Purchased
+          </p>
+        </div>
+        <div class="listobject">
+          <p>
+            <i class="material-icons">local_offer</i> Sale
+          </p>
+        </div>
+        <div class="listobject">
+          <p>
+            <i class="material-icons">help_outline</i> Help
+          </p>
+        </div>
+        <div class="listobject">
+          <p>
+            <i class="material-icons">account_circle</i> Thomas Moonjoo
+          </p>
+        </div>
+      </li>
+    </div>
+    </div>
+
+  </div>
+</template>
+<script>
+export default {}
+</script>
