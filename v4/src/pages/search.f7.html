@@ -1,0 +1,119 @@
+<template>
+  <div class="page" data-name="search">
+    
+    <!-- Scrollable page content-->
+    <div class="page-content_initial">
+      <form class="searchbar searchbar-init" data-search-container=".list" data-search-in=".item-title">
+        <div class="searchbar-inner">
+          <div class="searchbar-input-wrap">
+            <input type="search" placeholder="Search">
+            <i class="searchbar-icon"></i>
+            <span class="input-clear-button"></span>
+          </div>
+          <span class="searchbar-disable-button if-not-aurora">Cancel</span>
+        </div>
+      </form>
+
+      <div class="searchbar-backdrop"></div>
+    <!-- hide-on-search element -->
+    <div class="block searchbar-hide-on-search">
+      <p>Please enter a article name and click to go to the relevant page</p>
+    </div>
+    <!-- search target list -->
+    <div class="list searchbar-found">
+      <ul>
+        <li class="item-content">
+          <div class="item-inner">
+            <div class="item-title"><a href="#">Apple</a></div>
+          </div>
+        </li>
+        <li class="item-content">
+          <div class="item-inner">
+            <div class="item-title">Banana</div>
+          </div>
+        </li>
+        <li class="item-content">
+          <div class="item-inner">
+            <div class="item-title">Cheese</div>
+          </div>
+        </li>
+        <li class="item-content">
+          <div class="item-inner">
+            <div class="item-title">Milk</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- Nothing found message -->
+    <div class="block searchbar-not-found">
+      <div class="block-inner">Nothing found</div>
+    </div>
+    </div>
+
+    
+    
+    <!-- Footer -->
+    <div class="toolbar tabbar toolbar-bottom">
+      <div class="toolbar-inner">
+        <a href="#" class="button button-small panel-toggle display-flex" data-panel="left">
+          <i class="material-icons button-inactive">menu</i>
+        </a>
+        <a href="/" class="button button-small">
+          <i class="material-icons button-inactive">store</i>
+        </a>  
+        <a href="/cart" class="button button-small">
+          <i class="material-icons button-inactive">shopping_cart</i>
+        </a>
+        <a href="/search" class="button button-small">
+          <i class="material-icons">search</i>
+        </a>
+      </div>
+    </div>
+
+    <!--Menu-->
+    <div class="panel panel-left panel-cover">
+      <div class="block">
+        <h2>Online Grocery Store</h2>
+      <li>
+        <div class="listobject">
+          <p>
+            <i class="material-icons">perm_identity</i> User Settings
+          </p>
+        </div>
+        <div class="listobject">
+          <p>
+            <i class="material-icons">payment</i> Payment Settings
+          </p>
+        </div>
+        <div class="listobject">
+          <p>
+            <i class="material-icons">restore</i> Recently Purchased
+          </p>
+        </div>
+        <div class="listobject">
+          <p>
+            <i class="material-icons">local_offer</i> Sale
+          </p>
+        </div>
+        <div class="listobject">
+          <p>
+            <i class="material-icons">help_outline</i> Help
+          </p>
+        </div>
+        <div class="listobject">
+          <p>
+            <i class="material-icons">account_circle</i> Thomas Moonjoo
+          </p>
+        </div>
+      </li>
+    </div>
+    </div>
+
+    
+
+    
+  </div>
+</template>
+<script>
+export default {}
+</script>

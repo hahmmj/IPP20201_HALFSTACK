@@ -1,0 +1,56 @@
+<template>
+  <div class="page" data-name="shopfirststep">
+    <!-- Top fixed Navbar -->
+    <div class="navbar">
+      <div class="navbar-bg"></div>
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="material-icons">keyboard_arrow_left</i>
+            <span class="if-not-md">Back</span>
+          </a>
+        </div>
+        <div class="title">Shop Page</div>
+      </div>
+    </div>
+  
+    <!-- Scrollable page content-->
+    <div class="page-content">
+      <div class="block block-strong">
+        <a-scene>
+          <img id="panorama" src="../images/lifelike_fruit.svg">
+          <a-sky src="#panorama" rotation="0 -90 0"></a-sky>
+        </a-scene>  
+      </div>
+      <div class="view view-main view-init safe-areas" data-url="/store"></div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="toolbar toolbar-bottom">
+      <div class="toolbar-inner">
+        <a href="#" class="button button-small panel-toggle display-flex" data-panel="left">
+          <i class="material-icons">menu</i>
+        </a>
+        <a href="/store" class="button button-small">
+          <i class="material-icons">store</i>
+        </a>  
+        <a href="/cart" class="button button-small">
+          <i class="material-icons">shopping_cart</i>
+        </a>
+        <a href="/search" class="button button-small">
+          <i class="material-icons">search</i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Toolbar-->
+
+
+    <div class="panel panel-left panel-reveal"><p>page</p></div>
+
+  </div>
+</template>
+<script>
+export default {}
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/aframe/1.0.4/aframe.min.js"></script>
