@@ -1,0 +1,193 @@
+<template>
+
+    <div class="page page-home">
+          <!-- Navbar -->
+          <div class="navbar">
+              <div class="navbar-bg"></div>
+              <div class="navbar-inner sliding">
+                <div class="left">
+                  <a class="link back">
+                    <i class="icon icon-back"></i>
+                  </a>
+                </div>
+                <div class="title">Checkout</div>
+                <div class="right">
+                  <a class="link forward">
+                    <i class="icon icon-forward displaynone"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer -->
+      <div class="toolbar toolbar-bottom">
+        <div class="toolbar-inner">
+          <a href="#" class="button button-small panel-toggle display-flex" data-panel="left">
+          <i class="material-icons button-inactive">menu</i>
+          </a>
+          <a href="/home" class="button button-small">
+          <i class="material-icons button-inactive">store</i>
+          </a>  
+          <a href="/cart/" class="button button-small button-inactive">
+          <i class="material-icons">shopping_cart</i>
+          </a>
+          <a href="/search" class="button button-small button-inactive">
+          <i class="material-icons button-inactive">search</i>
+          </a>
+        </div>
+      </div>
+
+
+
+
+      <div class="page-content">
+          <!--Article content -->
+          <div class="page-background">
+              <ui class="scList"></ui>
+              <div class="createSpace"></div>
+          </div>
+          <ui class="rectangle_bottom"></ui>
+      </div>
+
+
+
+      <!-- Menu -->
+      <div class="panel panel-left panel-cover">
+      <div class="block">
+        <h2>Grocify</h2>
+          <ui>
+            <div class="listobject">
+              <p>
+                <i class="material-icons">perm_identity</i> User Settings
+              </p>
+            </div>
+            <div class="listobject">
+              <p>
+                <i class="material-icons">payment</i> Payment Settings
+              </p>
+            </div>
+            <div class="listobject">
+              <p>
+                <i class="material-icons">restore</i> Recently Purchased
+              </p>
+            </div>
+            <div class="listobject">
+              <p>
+                <i class="material-icons">local_offer</i> Sale
+              </p>
+            </div>
+            <div class="listobject">
+              <p>
+                <i class="material-icons">help_outline</i> Help
+              </p>
+            </div>
+            <div class="listobject">
+              <p>
+                <i class="material-icons">account_circle</i> Thomas Moonjoo
+              </p>
+            </div>
+          </ui>
+      </div>
+      </div>
+    
+    </div>
+</template>
+<script>
+  return{
+    methods: {  
+    },
+
+  on: {
+    pageAfterIn: function displaySC(e, page) {
+    
+      //declare variables
+    let scList = document.getElementsByClassName("scList")[0]
+    let scTotal = document.getElementsByClassName("rectangle_bottom")[0]
+    var scSum = 0
+
+    //delete content memory
+    scList.innerHTML = "";
+    app.data.Apples = [];
+
+    //push all articles with property "Quantity in SC" =/= 0 into shopping cart array
+    app.data.mockArticles.forEach(element => {
+    if(element.qtyInSc != 0){            
+    app.data.SC.push(element);
+            }
+        }
+    )
+
+    // create article elements for SC and calculate price
+      app.data.SC.forEach(element => {
+          var Price = parseFloat(element.articlePrice)
+          var Qty = parseFloat(element.qtyInSc)
+          var Sum = Math.round((Price*Qty) * 1000) / 1000
+        let scElementHTMLString = `  <div class="article-element">
+        <div class="picture_article-element_sc">
+            <img src="` + element.articleImage + `"alt="article" class="article_img">
+        </div>
+        <div class="text_article-element_sc">
+            <p class="name_info">` + element.articleName + `</p>
+            <div class="add_remove">
+                <a class="button button-small"><i class="material-icons triggerMinus remove">remove</i></a>
+                <div class="border_around_number"><p class="number_of_articles_sc">` + element.qtyInSc + `</p></div>
+                <a class="button button-small triggerPlus" id="`+ element.articleName +`"><i class="material-icons add">add</i></a>
+            </div>
+            <div class="piece_price">
+                <p class="price_pp">` + element.articlePrice + `€/p</p>
+            </div>
+        </div>
+        <div class="total_price_article">
+            <p class="total">Total:</p>
+            <p class="price">` + Sum + `€</p>
+        </div>
+    </div>`  
+    scList.innerHTML += scElementHTMLString;
+
+    //calculate total price and add Checkout button
+    scSum = Math.round((scSum + Sum) * 10000) / 10000
+            scTotal.innerHTML =` <div class="large2"><div class="Sum">Sum:</div><div class="good scTotal">` + scSum + `€</div></div>
+            <a href="/checkout_page_1" class="button pay_now">Checkout</a> `
+
+
+//add eventListener to +&- buttons
+        $('.triggerPlus').on('click', function () {
+          console.log(this.id)
+          app.data.mockArticles.forEach(element => {
+          if(element.articleName === this.id){ 
+            console.log(element.qtyInSc)
+            element.qtyInSc ++   
+            console.log(element.qtyInSc)
+        }
+        else {
+          return
+        }
+        scList.innerHTML = "";
+        app.data.SC = [];
+        displaySC()
+
+        $('.triggerMinus').on('click', function () {
+          element.qtyInSc --
+          scList.innerHTML = "";
+        app.data.SC = [];
+        displaySC()
+        });
+      });
+    });
+        
+      })
+
+       
+
+    },
+
+    pageBeforeOut: function emptyApples(e, page) {
+    let scList = document.getElementsByClassName("scList")[0]
+    app.data.SC = [];
+    },
+  }
+}
+</script>
+<script src="packages/core/js/framework7.bundle.min.js"></script>
+<script src="js/routes.js"></script>
+<script src="js/app.js"></script>

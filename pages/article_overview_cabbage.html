@@ -1,0 +1,185 @@
+<template>
+
+    <div class="page page-home">
+          <!-- Navbar -->
+          <div class="navbar">
+              <div class="navbar-bg"></div>
+              <div class="navbar-inner sliding">
+                <div class="left">
+                  <a class="link back">
+                    <i class="icon icon-back"></i>
+                  </a>
+                </div>
+                <div class="title">Cabbage</div>
+                <div class="right">
+                  <a class="link forward">
+                    <i class="icon icon-forward displaynone"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer -->
+      <div class="toolbar toolbar-bottom">
+        <div class="toolbar-inner">
+          <a href="#" class="button button-small panel-toggle display-flex" data-panel="left">
+          <i class="material-icons button-inactive">menu</i>
+          </a>
+          <a href="/home" class="button button-small">
+          <i class="material-icons">store</i>
+          </a>  
+          <a href="/cart2/" class="button button-small button-inactive">
+          <i class="material-icons button-inactive">shopping_cart</i>
+          </a>
+          <a href="/search" class="button button-small button-inactive">
+          <i class="material-icons button-inactive">search</i>
+          </a>
+        </div>
+      </div>
+
+
+
+
+      <div class="page-content">
+          <!--Article content -->
+          <div class="page-background">
+              <ui class="articleList"></ui>
+          </div>
+      </div>
+
+
+
+      <!-- Menu -->
+      <div class="panel panel-left panel-cover">
+      <div class="block">
+        <h2>Grocify</h2>
+          <ui>
+            <div class="listobject">
+              <p>
+                <i class="material-icons">perm_identity</i> User Settings
+              </p>
+            </div>
+            <div class="listobject">
+              <p>
+                <i class="material-icons">payment</i> Payment Settings
+              </p>
+            </div>
+            <div class="listobject">
+              <p>
+                <i class="material-icons">restore</i> Recently Purchased
+              </p>
+            </div>
+            <div class="listobject">
+              <p>
+                <i class="material-icons">local_offer</i> Sale
+              </p>
+            </div>
+            <div class="listobject">
+              <p>
+                <i class="material-icons">help_outline</i> Help
+              </p>
+            </div>
+            <div class="listobject">
+              <p>
+                <i class="material-icons">account_circle</i> Thomas Moonjoo
+              </p>
+            </div>
+          </ui>
+      </div>
+      </div>
+    
+    </div>
+</template>
+<script>
+  return{
+    methods: {
+
+  },
+
+  on: {
+  pageAfterIn: function displayCabbage(e, page) {
+
+    //declare variables
+    app.data.SC = [];
+  let articleList = document.getElementsByClassName("articleList")[0]
+
+  // delete content memory
+  articleList.innerHTML = "";
+
+  //push all articles with property "Cabbage" into Cabbage array
+  app.data.mockArticles.forEach(element => {
+  if(element.articleGroup === "Cabbage"){            
+  app.data.Cabbage.push(element);
+    }
+  }
+       )
+
+     // create article elements for AG Cabbage 
+    app.data.Cabbage.forEach(element => {
+      let articleElementHTMLString = `  <div class="article-element">
+                <div class="picture_article-element">
+                    <img src="` + element.articleImage + `" alt="article" class="article_img">
+                </div>
+                  <div class="text_article-element">
+                        <p class="name_info">` + element.articleName + `
+                            <a href="/info" class="button button-small"><i class="material-icons button-color">info</i></a>
+                         </p>
+                         <div class="rating_comments">
+                            <a href="/comment_page" class="button button-small"><i class="material-icons rating">star_rate</i></a>
+                            <a href="/comment_page">` + element.articleRating + ` / 5</a>
+                        </div>
+                      <div class="piece_price">
+                           <p>` + element.articleQuantity + `</p>
+                           <p class="price">` + element.articlePrice + `€</p>
+                       </div>
+                    </div>
+                    <div class="addtocart_article-element button" id="`+ element.articleName +`">
+                        <i class="material-icons">add_shopping_cart</i>
+                    </div>
+                </div>`
+        articleList.innerHTML += articleElementHTMLString;
+    })
+
+    //add eventListener for SC button that adds +1 to qtyInSc variable
+    //if id in html and articleNAme in Array mockArticles[] match
+    //&changes the apperance of the button
+    $('.addtocart_article-element').on('click', function () {
+    this.classList.remove("addtocart_article-element")
+    this.classList.add("isincart_article-element")
+    app.data.mockArticles.forEach(element => {
+      if(element.articleName === this.id){ 
+        element.qtyInSc ++   
+    }
+    else {
+      return
+    }
+    // apperance is changed here
+    this.innerHTML =`   <div class="add_one triggerPlus button">
+                                  <i class="material-icons add_item1">add</i>
+                              </div>
+                              <div class="CountArticle">` + element.qtyInSc + `</div> 
+                              <div class="remove_one triggerMinus button">
+                                  <i class="material-icons remove_item1">remove</i>
+                              </div>`
+     //adds +1  to qtyInSc variable                        
+    $('.triggerPlus').on('click', function () {
+    });
+    //adds -1 to qtyInSc variable  
+    $('.triggerMinus').on('click', function () {
+      element.qtyInSc --
+      element.qtyInSc --
+    });  
+  });
+})
+},
+       
+//empty array Cabbage[]
+pageBeforeOut: function emptyCabbage(e, page) {
+app.data.Cabbage = [];
+},
+}
+}
+</script>
+<script src="packages/core/js/framework7.bundle.min.js"></script>
+<script src="js/routes.js"></script>
+<script src="js/app.js"></script>
